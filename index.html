@@ -4,14 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/mainstylesheet.css">
+    <link rel="stylesheet" href="./assets/css/mainstylesheet.css">
     <!-- Java -->
-    <script src="./assets/js/java.js" defer></script>
-
+<script src="assets/js/java.js" defer></script>
     <title>Document</title>    <!-- Ændre titel -->
 
 </head>
 <body>
+ <!-- Burger menu vises -->
+ <section class="burgermenu">
+    <span class="top-nav" id="openMenu">
+        <span id="bg-wrapper">
+            <i class="bg" id="linje1"></i>
+            <i class="bg" id="linje2"></i>
+            <i class="bg" id="linje3"></i>
+        </span>
+    </span>
+    <!-- burgermenu vises ikke -->
+    <nav id="menu" class="visIkke">
+        <span id="innerMenu">
+            <ul class="menu-mobil">
+                <li><a href="#start" class="link mbmenu">start</a></li>
+                <li><a href="#omOs" class="link mbmenu">om os</a></li>
+                <li><a href="#galleri" class="link mbmenu">galleri</a></li>
+                <li><a href="#favorit" class="link mbmenu">favorit</a></li>
+                <li><a href="#kontakt" class="link mbmenu">Kontakt</a></li>
+            </ul>
+        </span>
+    </nav>
+</section>
 
+<nav class="desktop-menu">
+    <ul>
+        <li><a href="#start" class="link">start</a></li>
+        <li><a href="#omOs" class="link">om os</a></li>
+        <li><a href="#gallei" class="link">galleri</a></li>
+        <li><a href="#favorit" class="link">favorit</a></li>
+        <li><a href="#kontak" class="link">Kontakt</a></li>
+    </ul>
+</nav>
+<div class="fyld" id="start"></div>
+<div class="fyld" id="omOs"></div>
+<div class="fyld" id="galleri"></div>
+<div class="fyld" id="favorit"></div>
+<div class="fyld" id="kontakt"></div>
 </body>
 </html>

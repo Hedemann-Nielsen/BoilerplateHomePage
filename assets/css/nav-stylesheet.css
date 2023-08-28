@@ -1,0 +1,212 @@
+/* Gør top baren fastlåst til toppen */
+.burgermenu,
+.desktop-menu {
+    position: sticky;
+    z-index: 10;
+    top: 0;
+}
+
+/* TOP BAR BJÆLKE */
+.top-nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 55px;
+    padding-right: 10px;
+    background-color: black;
+}
+
+#bg-wrapper {
+    cursor: pointer;
+}
+
+/* FORMER BURGERMENUEN */
+.bg {
+    display: block;
+    width: 50px;
+    height: 5px;
+    background-color: white;
+    margin: 10px auto;
+    border-radius: 50px;
+}
+
+/* TRANSITION PÅ BURGERMENU VED KLIK*/
+.bg {
+    transition: all .7s ease;
+}
+
+#bg-wrapper #linje1.bg1-active {
+    transform: translateY(15px) rotateZ(45deg);
+}
+
+#bg-wrapper #linje2.bg2-active {
+    opacity: 0;
+}
+
+#bg-wrapper #linje3.bg3-active {
+    transform: translateY(-15px) rotateZ(-45deg);
+}
+
+/* menuen til mobil formes  */
+#menu {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    background-color: rgba(186, 185, 185, 0.729);
+    animation: goRight 1s;
+    animation-timing-function: ease-in-out;
+    z-index: 999;
+
+}
+
+/* menuen kommer ind fra højre */
+@keyframes goRight {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: 0px;
+    }
+}
+
+/* menuen med menupunkterne formes */
+#innerMenu {
+    width: 100%;
+    height: 100vh;
+    margin: 2rem auto;
+
+}
+
+.menu-mobil ul {
+    display: block;
+}
+
+.menu-mobil li {
+    list-style: none;
+    padding: 0.8rem;
+    text-align: center;
+}
+
+.menu-mobil li a {
+    color: black;
+    text-decoration: none;
+    font-size: 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* skifter menuerne(mobil og desktop) imellem vises og vises ikke */
+.visIkke {
+    display: none;
+}
+
+.vis {
+    display: block;
+}
+
+/*klassen bruges til at lave linje under menupunkt når musen holdes over under mobil menu */
+.link {
+    position: relative;
+    display: inline-block;
+}
+
+/* styler linjen som kommerfrem nåt musen holdes over et menupunkt */
+.link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    border-radius: 4px;
+    scale: 0 1;
+    transform-origin: right;
+    transition: scale 0.5s;
+}
+
+.link:hover::before {
+    scale: 1;
+    transform-origin: left;
+}
+
+.desktop-menu {
+    display: none;
+}
+
+#start {
+    background-color: orange;
+}
+
+#omOs {
+    background-color: red;
+}
+
+#galleri {
+    background-color: blue;
+}
+
+#favorit {
+    background-color: green;
+}
+
+#kontakt {
+    background-color: yellow;
+}
+
+/* media queries - mobil first */
+
+/* Tablet */
+@media (min-width: 600px) {
+
+    /* FJERNER BURGERMENU */
+    .burgermenu {
+        display: none;
+    }
+
+    /* VISER BJÆLKE MNEU */
+    .desktop-menu {
+        display: block;
+    }
+
+    .desktop-menu {
+        background-color: black;
+        /* Ændre farve på bjælke */
+    }
+
+    .desktop-menu ul {
+        display: flex;
+        justify-content: flex-end;
+        /* placere menuen i højre side */
+
+        /* justify-content: flex-start; */
+        /* placere menuen i venstre side */
+
+        /* justify-content: center; */
+        /* placer menuen i midten */
+
+    }
+
+    .desktop-menu ul li {
+        list-style: none;
+        padding: 1rem 1.5rem;
+    }
+
+    .desktop-menu ul li a {
+        text-decoration: none;
+        text-transform: capitalize;
+        font-size: 20px;
+        color: white;
+
+        &:hover {
+            /* det sker der når der hovers på linket */
+            color: blue;
+        }
+    }
+}
+
+.fyld {
+    height: 1000px;
+}
